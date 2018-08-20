@@ -1,0 +1,184 @@
+body{
+    width:100%;
+}
+.button {
+  border: 2px solid #fff;
+  color: #f3fff2;
+  font-family: 'RobotoMono', monospace;
+  padding: 25px;
+  width: 170px;
+  text-align: center;
+  position: relative;
+  margin-left:8%;
+  background: #b1ffaa;
+}
+.button:hover{
+    
+}
+.group 			  { 
+  position:relative; 
+  margin-bottom:45px; 
+}
+form{
+    box-sizing:border-box;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-left: calc(50% - 170px);
+}
+input 				{
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:300px;
+  border:none;
+  border-bottom:1px solid #757575;
+  text-align: center;
+}
+input:focus 		{ outline:none; }
+label 				 {
+  color:#b1ffaa; 
+  font-size:18px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+input:focus ~ label, input:valid ~ label 		{
+  top:-20px;
+  font-size:14px;
+  color:#b1ffaa;
+}
+.bar 	{ position:relative; display:block; width:300px; }
+.bar:before, .bar:after 	{
+  content:'';
+  height:2px; 
+  width:0;
+  bottom:1px; 
+  position:absolute;
+  background:#b1ffaa; 
+  transition:1s ease all; 
+  -moz-transition:1s ease all; 
+  -webkit-transition:1s ease all;
+}
+.bar:before {
+  left:50%;
+}
+.bar:after {
+  right:50%; 
+}
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:50%;
+}
+.highlight {
+  position:absolute;
+  height:60%; 
+  width:100px; 
+  top:25%; 
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+input:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 1s ease;
+  -moz-animation:inputHighlighter 1s ease;
+  animation:inputHighlighter 1s ease;
+}
+@-webkit-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}
+
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+table th{
+    background-color: #f3fff2;
+}
+table th,
+table td {
+  padding: .625em;
+  text-align: center;
+}
+
+table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+  
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
